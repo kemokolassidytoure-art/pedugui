@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: pedugui-api
+  mongodb:
+    uri: mongodb://mongo:12345678@localhost:27018/pedugui?authSource=admin
+#    host: localhost
+#    username: "mongo"
+#    password: "12345678"
+#    port: 27018
+#    database: pedugui
+server:
+  port: 8081
+
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method

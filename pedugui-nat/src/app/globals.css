@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-portal-green: #4caf50;
+  --color-portal-yellow: #fbc02d;
+  --color-portal-background: #fff8d6;
+  --color-portal-dark: #2e2e2e;
+}
+
+a {
+  --ant-color-link: #ffffff;
+}
+
+a:hover {
+  --ant-color-link: #ffffff;
+  --ant-color-link-hover: #ffffff;
+}
