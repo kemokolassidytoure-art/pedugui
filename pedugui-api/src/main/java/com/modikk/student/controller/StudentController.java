@@ -10,14 +10,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(path = "student")
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://localhost:3001")
 public class StudentController {
     private final StudentService studentService;
 
     @PostMapping(path = "create")
     @ResponseBody
     @ResponseStatus(HttpStatus.CREATED)
-    @CrossOrigin(origins = "http://localhost:3001")
     public StudentResult create(@RequestBody CreateStudentCommand command) {
         return studentService.create(command);
     }

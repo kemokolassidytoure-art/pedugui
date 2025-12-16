@@ -21,7 +21,7 @@ public class PeduguiApiApplication {
                 registry.addMapping("/**")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowCredentials(true)
-                        .allowedOrigins("http://localhost:3001");
+                        .allowedOrigins("http://localhost:3000", "http://localhost:3001");
             }
         };
     }

@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class SchoolService {
     private final SchoolRepository schoolRepository;
 
+
     public SchoolResult create(CreateSchoolCommand command) {
         var document = SchoolDocument.builder()
                 .name(command.name())

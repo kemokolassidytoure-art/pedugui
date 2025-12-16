@@ -67,7 +67,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ant-design/icons@npm:^6.1.0":
+"@ant-design/icons@npm:6.x, @ant-design/icons@npm:^6.1.0":
   version: 6.1.0
   resolution: "@ant-design/icons@npm:6.1.0"
   dependencies:
@@ -4409,6 +4409,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "pedugui-school@workspace:."
   dependencies:
+    "@ant-design/icons": "npm:6.x"
     "@ant-design/nextjs-registry": "npm:^1.3.0"
     "@tailwindcss/postcss": "npm:^4"
     "@tanstack/react-query": "npm:^5.90.12"

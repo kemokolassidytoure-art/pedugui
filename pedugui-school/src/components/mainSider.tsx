@@ -47,6 +47,32 @@ const MainSider = () => {
         },
       ],
     },
+    {
+      key: "2",
+      collapsedIcon: <HomeOutlined />,
+      icon: (
+        <HomeOutlined className="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center text-sm" />
+      ),
+      label: "Enseignant",
+      children: [
+        {
+          key: "21",
+          label: "Enregistrer",
+          path: "/teacher/register",
+          icon: (
+            <HomeOutlined className="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center text-sm" />
+          ),
+        },
+      ],
+    },
+    {
+      key: "3",
+      label: "Paramètres",
+      path: "/settings",
+      icon: (
+        <HomeOutlined className="w-8 h-8 rounded-xl bg-white/20 flex items-center justify-center text-sm" />
+      ),
+    },
   ];
 
   const baseItemToAntdItem = (item: BaseMenuItem): ItemType<MenuItemType> => {
@@ -56,7 +82,7 @@ const MainSider = () => {
     }
     return {
       key: item.key,
-      icon: item.icon,
+      // icon: item.icon,
       label: item.path ? (
         <Link href={item.path}>{item.label}</Link>
       ) : (
@@ -99,9 +125,9 @@ const MainSider = () => {
               </div>
               <div className="">
                 <p className="font-semibold text-lg leading-tight">
-                  Student Portal
+                  Portail Scolaire
                 </p>
-                <p className="text-xs text-white/80">Welcome back!</p>
+                <p className="text-xs text-white/80">Bienvenue!</p>
               </div>
             </div>
           </div>
@@ -160,9 +186,9 @@ const MainSider = () => {
                 </div>
                 <div className="">
                   <p className="font-semibold text-lg leading-tight">
-                    Student Portal
+                    Portail Scolaire
                   </p>
-                  <p className="text-xs text-white/80">Welcome back!</p>
+                  <p className="text-xs text-white/80">Bienvenue!</p>
                 </div>
               </div>
             </div>

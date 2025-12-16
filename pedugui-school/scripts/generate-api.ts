@@ -230,7 +230,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 // API INSTANCE
 // ================================
 export const api: AxiosInstance = axios.create({
-  baseURL: process.env.API_URL || "http://localhost:8080",
+  baseURL: process.env.API_URL || "http://localhost:8081",
   headers: { "Content-Type": "application/json" },
   withCredentials: true,
 });

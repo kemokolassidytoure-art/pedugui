@@ -1,3 +1,6 @@
+import { ValidateStatus } from "antd/es/form/FormItem";
+import { useEffect, useState } from "react";
+
 const normalizePhoneNumber = (value?: string) => {
   if (!value) return "";
 
@@ -14,4 +17,43 @@ const normalizePhoneNumber = (value?: string) => {
   return `${p1} ${p2} ${p3} ${p4}`;
 };
 
-export { normalizePhoneNumber };
+export type ValidMatriculeStatus = "not-found" | "found" | "loading";
+
+const getValidateStatus = (
+  foundStatus: ValidMatriculeStatus,
+  isLoading: boolean
+): ValidateStatus => {
+  if (isLoading) return "validating";
+
+  if (foundStatus === "not-found") return "error";
+
+  if (foundStatus === "found") return "success";
+
+  return "";
+};
+
+const useDebounce: <T>(value: T, milliSeconds?: number) => [T, boolean] = (
+  value,
+  milliSeconds = 500
+) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  const [isDebouncing, setIsDebouncing] = useState(false);
+
+  useEffect(() => {
+    setIsDebouncing(true);
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+      setIsDebouncing(false);
+    }, milliSeconds);
+
+    const clear = () => clearTimeout(handler);
+    return () => {
+      setIsDebouncing(false);
+      clear();
+    };
+  }, [value, milliSeconds]);
+
+  return [debouncedValue, isDebouncing];
+};
+
+export { normalizePhoneNumber, getValidateStatus, useDebounce };
